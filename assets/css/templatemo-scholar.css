@@ -109,6 +109,7 @@ img {
   overflow: hidden;
 }
 
+
 /* 
 ---------------------------------------------
 Global Styles
@@ -118,7 +119,9 @@ html,
 body {
   font-family: 'Poppins', sans-serif;
 }
-
+.mainHeading {
+  width: max-content;
+}
 ::selection {
   background: #7a6ad8;
   color: #fff;
@@ -1628,7 +1631,36 @@ Contact Style
   font-size: 16px;
   font-weight: 400;
 }
+/* WHATSAPP */
+.whatsapp-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
 
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe56;
+}
+
+.whatsapp-logo {
+  width: 24px;
+  height: 24px;
+  /* margin-right: 10px; */
+}
 /* 
 ---------------------------------------------
 Footer Style

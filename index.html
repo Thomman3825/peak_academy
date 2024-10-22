@@ -51,7 +51,7 @@ https://templatemo.com/tm-586-scholar
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <h1>Peak Academy</h1>
+                        <h1 class = 'mainHeading'>Peak Academy</h1>
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Serach Start ***** -->
@@ -632,7 +632,7 @@ https://templatemo.com/tm-586-scholar
         </div>
         <div class="col-lg-6">
           <div class="contact-us-content">
-            <form id="contact-form" action="" method="post">
+            <form id="contact-form" onsubmit="sendEmail(event)">
               <div class="row">
                 <div class="col-lg-12">
                   <fieldset>
@@ -661,6 +661,11 @@ https://templatemo.com/tm-586-scholar
       </div>
     </div>
   </div>
+  <div class="whatsapp-chat">
+    <a href="https://wa.me/7530003309" class="whatsapp-button" target="_blank">
+      <img src="assets/images/whatsapp-logo.png" alt="WhatsApp Logo" class="whatsapp-logo">
+    </a>
+  </div>
 
   <footer>
     <div class="container">
@@ -678,6 +683,39 @@ https://templatemo.com/tm-586-scholar
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
+  
+  <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+  <script type="text/javascript">
+    emailjs.init('NQHEkUPgvisC9Jjr_')
+  </script>
+  <script type="text/javascript">
+    function sendEmail(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      // Get form values
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      // Send email using EmailJS
+      emailjs.send("service_u3c8aan", "template_iqtjjw5", {
+        from_name: name,
+        reply_to: email,
+        message: message,
+        to_name: "Alphons"
+      })
+        .then(function (response) {
+          alert("Email sent successfully!");
+          document.getElementById("contact-form").reset(); // Reset form after successful send
+        }, function (error) {
+          console.error("Error: ", error);
+          alert("Failed to send message. Please try again.");
+           
+        });
+    }
+  </script>
+  
   </body>
 </html>
